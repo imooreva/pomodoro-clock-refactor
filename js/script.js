@@ -85,7 +85,7 @@ addClickListener('reset', ()=> {
 	}
 });
 
-addClickListener('timer', ()=> {
+addClickListener('circle', ()=> {
 	if (!timerRunning && breakCounter) {
 		  //resume break
 		  timerRunning = true;

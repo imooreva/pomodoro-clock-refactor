@@ -11,19 +11,20 @@
 		<div id="container">
 			<h1>Pomodoro Clock</h1>
 			<p id="status">Click timer to start/pause/adjust</p>
-			<div id="circle">
+            <button id="circle" tabindex="1">
 				<div id="timer">00:25:00</div>
-			</div>
+			</button>
 			<div id="btnctr">
 				<p class="labels">Break Length</p>
 				<div id="break">5</div>
-				<div class="buttons"><button class="btn" id="addbrk" onclick="changeBrkLength('+1')">+</button> <button class="btn" id="subbrk" onclick="changeBrkLength('-1')">-</button></div>
+                <div class="buttons"><button class="btn" id="addbrk" onclick="changeBrkLength('+1')" tabindex="2">+</button> <button class="btn" id="subbrk" onclick="changeBrkLength('-1')" tabindex="3">-</button></div>
 				<p class="labels">Session Length</p>
 				<div id="session">25</div>
-				<div class="buttons"><button class="btn" id="addminute" onclick="changeSesLength('+1')">+</button> <button class="btn" id="subtractminute" onclick="changeSesLength('-1')">-</button></div>
+                <div class="buttons"><button class="btn" id="addminute" onclick="changeSesLength('+1')" tabindex="4">+</button> <button class="btn" id="subtractminute" onclick="changeSesLength('-1')" tabindex="5">-</button></div>
 			</div>
-			<button id="reset">Reset</button>
+            <button id="reset" tabindex="6">Reset</button>
 		</div>		
         <script src="js/script.js"></script>
     </body>
+    <footer>Author's source code on <a href="https://github.com/imooreva/pomodoro-clock-refactor" target="_blank">Github</a></footer>
 </html>

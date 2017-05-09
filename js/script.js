@@ -142,3 +142,5 @@ var secondsToHMS = (seconds) => {
 	d.setSeconds(seconds);
 	return d.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
 }
+
+//export {clearInterval, getLength, setInterval, secondsRemaining, secondsToHMS};

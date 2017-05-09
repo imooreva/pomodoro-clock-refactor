@@ -1,84 +1,83 @@
 #container {
-	transform: scale(1);
+    margin: 0 auto;
+    height: auto;
+    width: auto;
 }
 
 body {
-	background-color: #001F33;
+	background-color: #00416B;
 	color: #FFFFFF;
 	font-family: "Droid serif", serif;
 	text-align: center;
 }
 
+#status {
+    font-size: 1.5rem;
+    line-height: 0.5rem;
+}
+
 .labels {
-	font-size: 1.125em;
-	line-height: 0.25em;
+	font-size: 1.75rem;
+	line-height: 0.25rem;
+    margin-top: 2rem;
 }
 
 #circle {
-	background-color: #0099CC;
-	font-size: 2.25em;
-	margin: 0.2em auto 0 auto;  
-	width: 200px;
-	height: 50px;
-	border-radius: 70px;
-	border: 2px #FF0000 solid;
+    background-color: #FFE7A4;
+    border: 0.25rem #0FA1FF solid;
+    border-radius: 4.375rem;
+    color: #A77B00;
+	font-size: 2.75rem;
+    height: 3.3333rem;
+    line-height: 3.3333rem;
+	margin: 0.25rem auto 0 auto;
+    text-align: center;
+    width: 16.6667rem;
 }
 
 #circle:active {  
 	transform: translateY(2px);
 }
 
-#timer {
-	color: #FFFFFF;
-	height: 50px;
-	line-height: 50px;
-	width: 200px;  
-	text-align: center;
-}
-
 #btnctr {
-	width: 200px;
-	border: 1px #0099CC solid;
-	border-radius: 20px;
-	height: 240px;  
-	margin: 0.5em auto 0 auto;  
+	width: 16.6667rem;
+    border: 0.25rem #0FA1FF solid;
+	border-radius: 1.25rem;
+	height: 20rem;
+	margin: 0.5rem auto 0 auto;
 	text-align: center;
 	overflow: hidden;
 }
 
 #break {
-	font-size: 2.25em;
+	font-size: 2.25rem;
 	margin: 0 auto;
-	left: 0;
-	right: 0;
-	position: absolute;
+    position: absolute;
 	text-align: center;
+    width: 16.6667rem;
 }
 
 #session {
-	font-size: 2.25em;
-	margin: 0 auto;
-	left: 0;
-	right: 0;
+	font-size: 2.25rem;
+    margin: 0 auto;
 	position: absolute;
 	text-align: center;
+    width: 16.6667rem;
 }
 
-.buttons {  
-	margin-top: 3.75em;
-	margin-bottom: 0.5em;
-	margin-left: 0;
-	margin-right: 0;
+.buttons {
+	margin: 3.75rem 0 0.5rem 0;
 	text-align: center;
-	position: relative;
 }
 
 .btn {
-	background: #DDDDDD;
-	border: 3px #0099CC solid;
-	border-radius: 10px;
-	height: 30px;
-	width: 55px;
+	background: #FFE7A4;
+    border: 0.25rem #0FA1FF solid;
+	border-radius: 0.625rem;
+    font-size: 1.6667rem;
+	height: 3rem;
+    margin-top: 0.5rem;
+	width: 4.5rem;
 }
 
 .btn:active {  
@@ -86,15 +85,15 @@ body {
 }
 
 #reset {
-	background-color: #AA0000;
+	background-color: #A72B00;
+    border: 0.25rem #FF9570 solid;
+    border-radius: 1rem;
 	color: #FFFFFF;
 	font-family: "Droid serif", serif;
-	font-size: 1.25em;
-	margin: 0.625em auto 0 auto;  
-	width: 100px;
-	height: 30px;
-	border-radius: 15px;
-	border: 2px #FF0000 solid;
+	font-size: 2rem;
+    height: 3.3333rem;
+	margin: 0.625rem auto 0 auto;
+	width: 16.6667rem;    
 }
 
 #reset:active {  

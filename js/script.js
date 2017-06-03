@@ -42,11 +42,45 @@ var breakInterval = () => {
 	setInnerHtml('timer', secondsToHMS(count));
 }
 
-//DOM-related functions
+//get time length of #timer, #break or #session
+var getLength = (ID) => {
+    return document.getElementById(ID).innerHTML;
+}
+
+//prevent user setting break time to less than one minute
+//function kept separate from event listeners
+var changeBrkLength = (input) => {
+    if (eval(getLength('break') + input) > 0 && !timerRunning) {
+        setInnerHtml('break', eval(getLength('break') + input));
+    }
+}
+
+//prevent user setting session time to less than one minute
+//function kept separate from event listeners
+var changeSesLength = (input) => {
+    if (eval(getLength('session') + input) > 0 && !timerRunning) {
+        setInnerHtml('session', eval(getLength('session') + input));
+    }
+}
+
+//convert #timer to seconds
+var secondsRemaining = () => {
+    let time = getLength('timer').split(':');
+    return time[0] * 3600 + time[1] * 60 + time[2] * 1;
+}
+
+//convert seconds to hh:mm:ss format
+var secondsToHMS = (seconds) => {
+    let d = new Date(1970,0,1);
+    d.setSeconds(seconds);
+    return d.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
+}
+
+
+//DOM-related functions and listeners for buttons
 var addClickListener = (ID, statements) => document.getElementById(ID).addEventListener('click', statements);
 var setInnerHtml = (ID, value) => document.getElementById(ID).innerHTML = value;
 
-//event listeners for buttons
 addClickListener('addminute', () => {
     if (!timerRunning && !breakCounter) {
         let toSeconds = getLength('session') * 60;
@@ -108,39 +142,5 @@ addClickListener('circle', ()=> {
 		  setInnerHtml('status', 'Paused');
         }
 });
-
-//get time length of #timer, #break or #session
-var getLength = (ID) => {
-	return document.getElementById(ID).innerHTML;
-}
-
-//prevent user setting break time to less than one minute
-//function kept separate from event listeners
-var changeBrkLength = (input) => {
-	if (eval(getLength('break') + input) > 0 && !timerRunning) {
-		setInnerHtml('break', eval(getLength('break') + input));
-	}
-}
-
-//prevent user setting session time to less than one minute
-//function kept separate from event listeners
-var changeSesLength = (input) => {
-	if (eval(getLength('session') + input) > 0 && !timerRunning) {
-		setInnerHtml('session', eval(getLength('session') + input));
-	}
-}
-
-//convert #timer to seconds
-var secondsRemaining = () => {
-	let time = getLength('timer').split(':');
-	return time[0] * 3600 + time[1] * 60 + time[2] * 1;
-}
-
-//convert seconds to hh:mm:ss format
-var secondsToHMS = (seconds) => {
-	let d = new Date(1970,0,1);
-	d.setSeconds(seconds);
-	return d.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, '$1');
-}
 
 //export {clearInterval, getLength, setInterval, secondsRemaining, secondsToHMS};
